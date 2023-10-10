@@ -12,7 +12,7 @@ use App\Models\Shop;
 class ShopOwner extends Authenticatable
 {
     use HasApiTokens, Notifiable, HasFactory;
-
+    protected $fillable = ['id','name','email','password'];
     public function shops(){
         return $this->hasMany(Shop::class);
     }

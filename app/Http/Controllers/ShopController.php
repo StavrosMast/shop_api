@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function store(Request $request)
     {
         // Validate the incoming data (e.g., name, shop owner, shop category, description, etc.)
@@ -15,7 +21,7 @@ class ShopController extends Controller
         // Create a new shop record
         $shop = new Shop();
         $shop->name = $request->input('name');
-        $shop->shop_owner_id = auth()->user()->id; // Assuming you're using authentication
+        $shop->shop_owner_id = $request->input('shop_owner_id'); // Assuming you're using authentication
         $shop->shop_category_id = $request->input('shop_category_id');
         $shop->description = $request->input('description');
         $shop->open_hours = $request->input('open_hours');

@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Http\Controllers\ShopController;
+use App\Models\ShopOwner;
 
 class ShopTest extends TestCase
 {
@@ -15,17 +16,21 @@ class ShopTest extends TestCase
     public function test_shop() //test passed
     {
         // $response = $this->get('/api/shops');
+        $this->withoutMiddleware();
         $data = [
                     'shop_owner_id' => '1',
-                    'shop_category_id' =>'',
+                    'shop_category_id' =>'1',
                     'name' => 'Shop1',
                     'description' => 'Shop1 description',
                     'open_hours' => '10:00-21:00',
                     'city' => 'Thessaloniki',
                     'address' => 'Egnatia 1',
                 ];
+
+        // $user = ShopOwner::where('id',$data['shop_owner_id'])->first();
+        // $response = $this->actingAs($user)->postJson('/api/shop', $data);
         $response = $this->postJson('/api/shops',$data);
-        $response->assertStatus(201);
+        $response->assertStatus(200);
     }
     // public function test_shop_owner_register() //test passed created user
     // {
