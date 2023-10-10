@@ -11,33 +11,36 @@
 
 The shop Api project has been developed with the use of Laravel.
 
-Packages installe:
+Packages installed:
 
--Jetstream for User Registration and Login
--Livewire for rendering components at the fron-end
+-   Jetstream for User Registration and Login
+-   Livewire for rendering components at the fron-end
 
 Instructions about the project
 
--Download the contents of the project into .zip format and extract the contents
--Move the folder with the contents to your desired directory
--Open the terminal window and navigate to the project's directory
--Inside the project directory run `composer install`
--You can open the `.env` file inside the directory and change only the `DATABASE_NAME` if you wish otherwise leave the `.env` file with its default values
--Then you need to run `php artisan migrate` aat the terminal window and if there is no database created press yes to create a new one.(You can see the database with the use of tools like TablePlus depending on what you are comfortable using)
--Run `npm install` and `npm run build`
--Run `php artisan serve` to start the local server application.
+-   Download the contents of the project into .zip format and extract the contents
+-   Move the folder with the contents to your desired directory
+-   Open the terminal window and navigate to the project's directory
+-   Inside the project directory run `composer install`
+-   You can open the `.env` file inside the directory and change only the `DATABASE_NAME` if you wish otherwise leave the `.env` file with its default values
+-   Then you need to run `php artisan migrate` aat the terminal window and if there is no database created press yes to create a new one.(You can see the database with the use of tools like TablePlus depending on what you are comfortable using)
+-   Run `npm install` and `npm run build`
+-   Run `php artisan serve` to start the local server application.
 
 Instructions to navigate throught the application
--On the first page is the welcome page where the Shop List is located
--There is the possibility for the user to login and register we can find these two buttons on the top corner
--Register and login your desired user via the jetsream views that render when you press the above buttons.
+
+-   On the first page is the welcome page where the Shop List is located
+-   There is the possibility for the user to login and register we can find these two buttons on the top corner
+-   Register and login your desired user via the jetsream views that render when you press the above buttons.
 
 Because we are testing the api we have registered the routes at the api.php and didn't create views. All the tests are located inside the `tests/Feature` folder.
+
 Keep in mind that all the tests create the data and import them inside the db with data that we pass inside a `$data` array inside each test. For testing purposes we can do that
 and then fetch the data we want to add dynamicaly.
--First we want to run `php artisan test --filter CategoryTest` at the terminal in order to create the shop category that the user wants.To add change the value of `name` inside the `$data` array with your desired one.
--Then we can run `php artisan test --filter ShopTest` at the terminal to create a shop and change the `$data` array values accordingly.
--Lastly we need to run `php artisan test --filter OfferTest` at the terminal to create an offer.
+
+-   First we want to run `php artisan test --filter CategoryTest` at the terminal in order to create the shop category that the user wants.To add change the value of `name` inside the `$data` array with your desired one.
+-   Then we can run `php artisan test --filter ShopTest` at the terminal to create a shop and change the `$data` array values accordingly.
+-   Lastly we need to run `php artisan test --filter OfferTest` at the terminal to create an offer.
 
 Once done with the above steps if all steps where completed we should see the registered user in both `users` table and `shop_owners` table. We can manipulate this functionality depending on the project and the requirements.
 Also there should be data inside the `shop_categories` , `shops` and `offers` tables which means our api endpoints work. Inside the `OfferController.php` which is located inside `app/Http/Controllers` directory,
