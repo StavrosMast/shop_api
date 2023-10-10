@@ -43,6 +43,7 @@ and then fetch the data we want to add dynamicaly.
 -   Lastly we need to run `php artisan test --filter OfferTest` at the terminal to create an offer.
 
 Once done with the above steps if all steps where completed we should see the registered user in both `users` table and `shop_owners` table. We can manipulate this functionality depending on the project and the requirements.
+
 Also there should be data inside the `shop_categories` , `shops` and `offers` tables which means our api endpoints work. Inside the `OfferController.php` which is located inside `app/Http/Controllers` directory,
 we have added the notification functionality so when an offer is created all the users are getting notified.
 
