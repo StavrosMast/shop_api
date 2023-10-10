@@ -43,7 +43,8 @@ Once done with the above steps if all steps where completed we should see the re
 Also there should be data inside the `shop_categories` , `shops` and `offers` tables which means our api endpoints work. Inside the `OfferController.php` which is located inside `app/Http/Controllers` directory,
 we have added the notification functionality so when an offer is created all the users are getting notified.
 
-Lastly you can logout from the application and at the welcome page now there should be a list with the shops you have added when running the test.
+Lastly you can logout from the application and at the welcome page now there should be a list with the shops you have added when running the test. We can also add this list inside the dashboard or in a different tab
+but for this project we want the guest users to see this list.
 
 ## About Laravel
 
